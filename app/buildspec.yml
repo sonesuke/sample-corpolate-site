@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+
+  build:
+    commands:
+      - cd $CODEBUILD_SRC_DIR_context
+      - ls
+      - cd $CODEBUILD_SRC_DIR
+      - node --version
+      - npm ci
+      - npm run build
+      
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: $CODEBUILD_SRC_DIR/dist
+      

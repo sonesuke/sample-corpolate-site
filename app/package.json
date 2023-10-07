@@ -1,0 +1,17 @@
+{
+  "name": "sample-corporate-site",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "clean": "rm -rf dist",
+    "deploy": "bash ./scripts/deploy.sh",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^3.2.3"
+  }
+}
