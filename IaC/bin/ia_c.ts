@@ -4,6 +4,7 @@ import * as cdk from 'aws-cdk-lib';
 import { BucketStack } from '../lib/bucket-stack';
 import { CloudFrontStack } from '../lib/cloudfront-stack';
 import { BuildStack } from '../lib/build-stack';
+import { ApiStack } from '../lib/api-stack';
 
 const app = new cdk.App();
 
@@ -16,3 +17,8 @@ const buildStack = new BuildStack(app, 'BuildStack', {
   assetsBucket: cloudfrontStack.assetsBucket,
   distribution: cloudfrontStack.distribution,
 });
+
+const apiStack = new ApiStack(app, 'ApiStack', {
+  sourceBucket: bucketStack.sourceBucket,
+});
+
