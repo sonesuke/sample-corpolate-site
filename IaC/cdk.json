@@ -20,6 +20,7 @@
 
     "sourceBucket": "source-bucket-sample-corporate-site",
     "assetsBucket": "assets-buecket-sample-corporate-site",
+    "secretArn": "arn:aws:secretsmanager:ap-northeast-1:683286215527:secret:sample-corporate-site-kB9GpL",
 
     "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
     "@aws-cdk/core:checkSecretUsage": true,

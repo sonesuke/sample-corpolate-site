@@ -1,0 +1,1 @@
+docker run  --platform linux/x86_64 --rm -v $(pwd):/work -w /work python:3.11 pip install --platform manylinux2014_x86_64 --only-binary=:all: -r requirements.txt -t .
