@@ -9,6 +9,7 @@ phases:
     commands:
       - cd $CODEBUILD_SRC_DIR_context
       - ls
+      - cp $CODEBUILD_SRC_DIR_context/salesforce.json $CODEBUILD_SRC_DIR/context/salesforce.json
       - cd $CODEBUILD_SRC_DIR
       - node --version
       - npm ci

@@ -1,0 +1,46 @@
+[
+  {
+    "attributes": {
+      "type": "Campaign",
+      "url": "/services/data/v58.0/sobjects/Campaign/7012v000002VUpDAAW"
+    },
+    "Id": "7012v000002VUpDAAW",
+    "Name": "GC Product Webinar - Jan 7, 2002",
+    "Status": "Completed",
+    "StartDate": "2019-06-23",
+    "EndDate": "2019-06-23"
+  },
+  {
+    "attributes": {
+      "type": "Campaign",
+      "url": "/services/data/v58.0/sobjects/Campaign/7012v000002VUpEAAW"
+    },
+    "Id": "7012v000002VUpEAAW",
+    "Name": "User Conference - Jun 17-19, 2002",
+    "Status": "Planned",
+    "StartDate": "2019-12-01",
+    "EndDate": "2019-12-03"
+  },
+  {
+    "attributes": {
+      "type": "Campaign",
+      "url": "/services/data/v58.0/sobjects/Campaign/7012v000002VUpFAAW"
+    },
+    "Id": "7012v000002VUpFAAW",
+    "Name": "DM Campaign to Top Customers - Nov 12-23, 2001",
+    "Status": "Completed",
+    "StartDate": "2019-04-28",
+    "EndDate": "2019-05-09"
+  },
+  {
+    "attributes": {
+      "type": "Campaign",
+      "url": "/services/data/v58.0/sobjects/Campaign/7012v000002VUpGAAW"
+    },
+    "Id": "7012v000002VUpGAAW",
+    "Name": "International Electrical Engineers Association Trade Show - Mar 4-5, 2002",
+    "Status": "Planned",
+    "StartDate": "2019-08-18",
+    "EndDate": "2019-08-19"
+  }
+]

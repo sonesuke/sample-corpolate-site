@@ -2,16 +2,17 @@
 interface Props {
   href: string;
   date: string;
+  status: string;
 }
 
-const { href, date } = Astro.props;
+const { href, date, status } = Astro.props;
 ---
 
 <a href={href}>
-  <div class="w-auto aspect-video border border-gray-400">
+  <div class="w-auto aspect-video border border-gray-400 bg-slate-50">
     <div class="flex flex-col justify-between h-full">
       <div class="flex justify-between p-2">
-        <div class="border border-gray-400 py-1 px-4">Open</div>
+        <div class=" py-1 px-4 text-white bg-orange-600">{status}</div>
         <div class="border border-gray-400 py-1 px-4">Event</div>
       </div>
       <div class="bg-gray-200 text-center p-2">{date}</div>

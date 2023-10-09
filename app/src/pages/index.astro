@@ -1,6 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import salesforceJson from "../../context/salesforce.json";
+import { isRenderTemplateResult } from "astro/runtime/server/render/astro/render-template.js";
+
+console.log(salesforceJson);
+
+const items = salesforceJson.map((item) => ({
+  date: item.StartDate,
+  href: "/event/" + item.Id,
+  status: item.Status,
+}));
 ---
 
 <Layout title="Sample Corporate Site">
@@ -27,9 +37,11 @@ import Card from "../components/Card.astro";
       <div class="container mx-auto py-8">
         <div class="text-2xl text-center">Events</div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 px-2">
-          <Card date="2023/1/1" href="/abc.html" />
-          <Card date="2023/1/1" href="/abc.html" />
-          <Card date="2023/1/1" href="/abc.html" />
+          {
+            items.map((item) => (
+              <Card status={item.status} date={item.date} href={item.href} />
+            ))
+          }
         </div>
       </div>
     </div>
