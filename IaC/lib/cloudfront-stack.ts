@@ -4,7 +4,6 @@ import * as s3 from "aws-cdk-lib/aws-s3";
 import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 import * as cloudfrontOrigins from "aws-cdk-lib/aws-cloudfront-origins";
 import * as iam from "aws-cdk-lib/aws-iam";
-import * as apigw from "aws-cdk-lib/aws-apigateway";
 
 interface CloudFrontStackProps extends cdk.StackProps {
   apiId: string;
