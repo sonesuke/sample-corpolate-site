@@ -1,0 +1,65 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import salesforceJson from "../../../context/salesforce.json";
+import RegisterForm from "../../components/RegisterForm.tsx";
+
+export function getStaticPaths() {
+  return salesforceJson.map((item) => ({
+    params: {
+      path: item.Id,
+    },
+    props: {
+      id: item.Id,
+      title: item.Name,
+      startDate: item.StartDate,
+      endDate: item.EndDate,
+      status: item.Status,
+    },
+  }));
+}
+
+const { id, title, startDate, endDate, status } = Astro.props;
+---
+<Layout title="Sample Corporate Site">
+  <main>
+    <!-- Hero Image -->
+    <div class="bg-gray-50 min-h-[360px] flex py-8">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 px-4">
+          <div class="flex flex-col">
+            <div class="text-4xl">
+              {title} asfafasdfaf
+            </div>
+            <div class="flex space-x-4 p-2">
+              <div>{startDate}</div>
+              <div class="border border-slate-400 px-4 text-slate-400">
+                Event
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Descritpion -->
+    <div class="bg-white">
+      <div class="container mx-auto py-8">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </div>
+    </div>
+  </main>
+  <!-- Register form -->
+  <div>
+    <div class="container mx-auto">
+      <div class="px-2 py-8 flex justify-center">
+        <RegisterForm campaignId={id} status={status} client:visible />
+      </div>
+    </div>
+  </div>
+</Layout>

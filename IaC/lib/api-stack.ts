@@ -11,6 +11,8 @@ interface ApiStackProps extends cdk.StackProps {
 }
 
 export class ApiStack extends cdk.Stack {
+  apiId: string;
+
   constructor(scope: Construct, id: string, props: ApiStackProps) {
     super(scope, id, props);
 
@@ -66,10 +68,14 @@ export class ApiStack extends cdk.Stack {
     );
     secret.grantRead(registerFunction);
 
-    const register = api.root.addResource("register");
+    const apiRoot = api.root.addResource("api");
+
+    const register = apiRoot.addResource("register");
     const registerMethod = register.addMethod(
       "POST",
       new apigw.LambdaIntegration(registerFunction)
     );
+
+    this.apiId = api.restApiId;
   }
 }

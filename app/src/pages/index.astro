@@ -2,13 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import salesforceJson from "../../context/salesforce.json";
-import { isRenderTemplateResult } from "astro/runtime/server/render/astro/render-template.js";
 
 console.log(salesforceJson);
 
 const items = salesforceJson.map((item) => ({
   date: item.StartDate,
-  href: "/event/" + item.Id,
+  href: "/event/" + item.Id + "/index.html",
   status: item.Status,
 }));
 ---
